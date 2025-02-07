@@ -29,9 +29,8 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-
-- task: CopyFiles@2
+- task: PublishBuildArtifacts@1
   inputs:
-    SourceFolder: '/home/vsts/work/1/s/target/'
-    Contents: '**/*.jar'
-    TargetFolder: '$(build.artifactstagingdirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'jarfile'
+    publishLocation: 'Container'
