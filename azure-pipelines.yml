@@ -7,9 +7,7 @@ trigger:
 - main
 
 pool:
-  name: test-agent-pool
-  demands: 
-  - Agent.Version -gtVersion 2.163.1
+  vmImage: ubuntu-latest
 
 steps:
 - task: Maven@4
