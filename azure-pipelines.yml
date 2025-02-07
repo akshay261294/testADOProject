@@ -10,13 +10,20 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+
+- script: |
+    sudo apt-get update
+    sudo apt-get install openjdk-21-jdk
+    java -version
+  displayName: 'Install JDK 21'
+
 - task: Maven@4
   inputs:
     azureSubscription: 'Pay-As-You-Go(50d2f6c5-dae3-40fc-98da-10137a9e2d97)'
     mavenPomFile: 'pom.xml'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
+    javaHomeOption: '1.21'
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
