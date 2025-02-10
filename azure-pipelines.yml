@@ -34,3 +34,10 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'jarfile'
     publishLocation: 'Container'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Pay-As-You-Go(50d2f6c5-dae3-40fc-98da-10137a9e2d97)'
+    appType: 'webApp'
+    WebAppName: 'java-akshay-basic-webapp'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/jarfile/*.jar'
