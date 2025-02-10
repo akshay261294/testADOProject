@@ -40,10 +40,10 @@ steps:
     ArtifactName: 'jarfile'
     publishLocation: 'Container'
 
-# - script: |
-#     echo "Listing contents of $(Build.ArtifactStagingDirectory)/jarfile"
-#     ls -al $(Build.ArtifactStagingDirectory)/jarfile
-#   displayName: 'List Build Artifacts'
+- script: |
+    echo "Listing contents of $(Build.ArtifactStagingDirectory)/jarfile"
+    ls -al $(Build.ArtifactStagingDirectory)/jarfile
+  displayName: 'List Build Artifacts'
   
 # - task: AzureRmWebAppDeployment@4
 #   inputs:
